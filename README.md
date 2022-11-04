@@ -36,5 +36,3 @@ The bot currently dropes and creates tables again after every restart (can be di
 ![txEmbed](https://user-images.githubusercontent.com/94227101/200073344-f98452d2-8536-4ba8-926b-1b8a65d5867f.png)
 
 ![cdEmbed](https://user-images.githubusercontent.com/94227101/200073867-2b002175-c1e4-41e2-bc8b-fbba02867314.png)
-
-
