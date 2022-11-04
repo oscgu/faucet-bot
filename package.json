@@ -1,0 +1,23 @@
+{
+  "name": "faucet-bot",
+  "version": "1.0.0",
+  "description": "Discord bot do disburse testnet ether",
+  "main": "index.js",
+  "author": "Oscar Guertler <oscarguertler@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "luxon": "^3.1.0",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.3"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.0.3",
+    "@types/node": "^18.11.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
