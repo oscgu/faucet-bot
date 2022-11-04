@@ -51,7 +51,7 @@ export default {
 
     if (!validPair(chain, token)) {
       await interaction.reply(
-        `We don't support ${token} on ${chain} at the moment! :(`
+        `We don't supply ${token} on ${chain} at the moment! :(`
       );
       return;
     }
