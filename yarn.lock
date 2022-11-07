@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@celo-tools/celo-ethers-wrapper@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@celo-tools/celo-ethers-wrapper/-/celo-ethers-wrapper-0.3.0.tgz#14e19edde1c71da912927344590029e9ffcb3a97"
+  integrity sha512-qJgVQ3EeVYzM0uvGcVxPB4cH8BaEnoLMyG8k/gAWzSCjJFIgNTlRs05IFGzAb7U0GlbDKCDSualHSGMXq+OHEw==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"

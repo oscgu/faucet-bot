@@ -16,7 +16,7 @@ export const baseTokenAmount = new Map<string, string>([
   ["goerli_eth", "0.01"],
   ["goerli_link", "5"],
   ["mumbai_matic", "1"],
-  ["alfajores_celo","5"],
+  ["alfajores_celo","0.0001"],
 ]);
 
 export const baseTokenCooldownHours = new Map<string, number>([
