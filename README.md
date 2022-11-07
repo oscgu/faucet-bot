@@ -23,9 +23,15 @@ Register the slash commands with: `yarn ts-node registerCommands.ts`
 
 ## Running the bot
 
+Without docker and db:
+
 `yarn ts-node index.ts`
 
-The bot currently dropes and creates tables again after every restart (can be disabled in index.ts@21 by setting force to false)
+With configured-db (requires docker(-compose) and `.env` file):
+
+`docker-compose up`
+
+The bot currently drops and creates tables again after every restart (can be disabled in index.ts@21 by setting force to false)
 
 ## Commands
 
