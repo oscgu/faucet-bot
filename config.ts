@@ -18,7 +18,7 @@ export const faucets: FaucetMapping = {
       }
     },
     chainId: 5,
-    explorer: ""
+    explorer: "https://goerli.etherscan.io/tx/"
   },
   mumbai: {
     tokens: {
@@ -29,7 +29,7 @@ export const faucets: FaucetMapping = {
       }
     },
     chainId: 80001,
-    explorer: ""
+    explorer: "https://mumbai.polygonscan.com/tx/"
   },
   alfajores: {
     tokens: {
@@ -40,7 +40,7 @@ export const faucets: FaucetMapping = {
       }
     },
     chainId: 42220,
-    explorer: ""
+    explorer: "https://alfajores.celoscan.io/tx/"
   }
 }
 
