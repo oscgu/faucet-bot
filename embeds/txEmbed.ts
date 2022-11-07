@@ -1,4 +1,5 @@
 import { EmbedBuilder } from "@discordjs/builders";
+import { faucets } from "../config";
 
 const createTxEmbed = (chain: string, token: string, amount: string, tx: string, status: string) =>
   new EmbedBuilder()
@@ -9,25 +10,12 @@ const createTxEmbed = (chain: string, token: string, amount: string, tx: string,
       { name: `⛓️ Chain:`, value: `${chain}` },
       { name: `🪙 Token:`, value: `${token}` },
       { name: `🏷️ Amount:`, value: `\`${amount}\`` },
-        { name: `⚙️ Tx:`, value: `${getTransactionApi(chain, tx)} ${status}` }
+        { name: `⚙️ Tx:`, value: `${getTransactionLink(chain, tx)} ${status}` }
     )
     .setTimestamp();
 
 export default createTxEmbed;
 
-const getTransactionApi = (chain: string, tx: string): string => {
-    let api;
-    switch (chain) {
-        case "goerli":
-            api = "https://goerli.etherscan.io/tx/";
-            break;
-        case "mumbai":
-            api = "https://mumbai.polygonscan.com/tx/";
-            break;
-        case "alfajores":
-            api = "https://alfajores.celoscan.io/tx/"
-            break;
-    }
-
-    return `[${tx}](${api}${tx})`;
+const getTransactionLink = (chain: string, tx: string): string => {
+    return `[${tx}](${faucets[chain].explorer}${tx})`;
 }
