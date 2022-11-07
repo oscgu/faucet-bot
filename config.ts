@@ -1,27 +1,66 @@
-export const chainlinkAddress = "0x326C977E6efc84E512bB9C30f76E30c160eD06FB";
+import { Duration } from "luxon";
 
-export const tokenPairs = new Map<string, string[]>([
-  ["goerli", ["eth", "link"]],
-  ["mumbai", ["matic"]],
-  ["alfajores", ["celo"]],
-]);
+export const faucets: FaucetMapping = {
+  goerli: {
+    tokens: {
 
-export const chainIds = new Map<string, number>([
-  ["goerli", 5],
-  ["mumbai", 80001],
-  ["alfajores", 42220],
-]);
+      "link": {
+        chainNative: false,
+        contractAddress: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
+        amount: "0.1",
+        coolDown: Duration.fromObject({ minutes: 60 }),
+      },
+      "eth":
+      {
+        chainNative: true,
+        amount: "0.001",
+        coolDown: Duration.fromObject({ minutes: 60 }),
+      }
+    },
+    chainId: 5,
+    explorer: ""
+  },
+  mumbai: {
+    tokens: {
+      "matic": {
+        chainNative: true,
+        amount: "0.1",
+        coolDown: Duration.fromObject({ minutes: 60 }),
+      }
+    },
+    chainId: 80001,
+    explorer: ""
+  },
+  alfajores: {
+    tokens: {
+      "celo": {
+        chainNative: true,
+        amount: "0.001",
+        coolDown: Duration.fromObject({ minutes: 60 }),
+      }
+    },
+    chainId: 42220,
+    explorer: ""
+  }
+}
 
-export const baseTokenAmount = new Map<string, string>([
-  ["goerli_eth", "0.01"],
-  ["goerli_link", "5"],
-  ["mumbai_matic", "1"],
-  ["alfajores_celo","0.0001"],
-]);
+export type FaucetMapping = {
+  [name: string]: Faucet;
+}
 
-export const baseTokenCooldownHours = new Map<string, number>([
-  ["goerli_eth", 1],
-  ["goerli_link", 2],
-  ["mumbai_matic", 5],
-  ["alfajores_celo", 8],
-]);
+export type Faucet = {
+  tokens: TokenMapping;
+  chainId: number;
+  explorer: string;
+}
+
+export type TokenMapping = {
+  [name: string]: Token;
+}
+
+export type Token = {
+  chainNative: boolean;
+  contractAddress?: string;
+  amount: string;
+  coolDown: Duration;
+}
