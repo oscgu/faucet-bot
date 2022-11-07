@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
