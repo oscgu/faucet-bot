@@ -82,7 +82,7 @@ export default {
       await transaction?.wait().then(res => {
         const status = res.status;
 
-        const editedTxEmbed = createTxEmbed(chain, token, value, res.blockHash, status == 1 ? "✅" : "❌");
+        const editedTxEmbed = createTxEmbed(chain, token, value, res.transactionHash, status == 1 ? "✅" : "❌");
         interaction.editReply({ embeds: [editedTxEmbed] })
       }
       );
