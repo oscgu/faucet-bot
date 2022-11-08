@@ -19,6 +19,9 @@ GUILD_ID=
 ADDRESS=
 ```
 
+The receiver address is currently hardcoded, but you can plug this into your existing backend by editing  
+`api/getAddresssOfUser.ts`. It passes the discord user id to it.
+
 Register the slash commands with: `yarn ts-node registerCommands.ts`
 
 ## Running the bot

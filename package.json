@@ -6,6 +6,9 @@
   "author": "Oscar Guertler <oscarguertler@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "dependencies": {
     "@celo-tools/celo-ethers-wrapper": "^0.3.0",
     "discord.js": "^14.6.0",
@@ -13,6 +16,7 @@
     "ethers": "^5.7.2",
     "luxon": "^3.1.0",
     "pg": "^8.8.0",
+    "prettier": "^2.7.1",
     "sequelize": "^6.25.3"
   },
   "devDependencies": {
