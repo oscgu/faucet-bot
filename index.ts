@@ -9,8 +9,7 @@ dotenv.config();
 console.log("Bot is starting");
 
 const client = new Client({
-    intents: [
-    ]
+    intents: []
 });
 
 client.login(process.env.BOT_TOKEN);
@@ -19,7 +18,7 @@ console.log("Logged in");
 (async () => {
     await sqlz.authenticate();
     await sqlz.sync({ force: true });
-})()
+})();
 
 ready(client);
 interactionCreate(client);
