@@ -38,7 +38,7 @@ export default {
                     { name: "CELO", value: "celo" }
                 )
         ),
-    async execute(interaction: any): Promise<void> {
+    async execute(interaction: any) {
         const chain = interaction.options.getString("chain") as string;
         const token = interaction.options.getString("token") as string;
 
