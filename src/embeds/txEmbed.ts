@@ -1,6 +1,4 @@
 import { EmbedBuilder, RGBTuple } from "@discordjs/builders";
-import { ColorResolvable } from "discord.js";
-import { col } from "sequelize";
 import { faucets } from "../config";
 import { capitalize } from "../util/capitalize";
 

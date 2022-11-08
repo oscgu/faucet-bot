@@ -6,6 +6,6 @@ COPY [ "package.json", "yarn.lock", "./"]
 
 RUN yarn install
 
-COPY . .
+COPY src/ .
 
 CMD [ "yarn", "ts-node", "index.ts"]

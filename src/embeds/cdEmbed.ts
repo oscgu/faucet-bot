@@ -8,7 +8,7 @@ const createCdEmbed = (
     cd: string
 ) =>
     new EmbedBuilder()
-            .setThumbnail(
+        .setThumbnail(
             "https://avatars.githubusercontent.com/u/95990630?s=200&v=4"
         )
         .setColor([255, 69, 0])

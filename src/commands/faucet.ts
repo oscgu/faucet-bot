@@ -1,5 +1,4 @@
 import { SlashCommandBuilder } from "discord.js";
-import { faucets, Token } from "../config";
 import { DateTime, Duration } from "luxon";
 import { upsertLastRequestDate } from "../db/operations";
 import dotenv from "dotenv";
@@ -9,6 +8,7 @@ import { getAddressOfUser } from "../api/getAddressOfUser";
 import { sendFunds } from "../ether/sendFunds";
 import { validPair } from "../util/validPair";
 import { milliSecondsTillNextRequest } from "../util/milliSecondsTillNextRequest";
+import { faucets, Token } from "../config";
 dotenv.config();
 
 export default {

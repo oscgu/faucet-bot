@@ -1,6 +1,6 @@
 import { ethers, Wallet } from "ethers";
-import { faucets } from "../config";
 import dotenv from "dotenv";
+import { faucets } from "../config";
 dotenv.config();
 
 export const getWallet = (chain: string) => {
