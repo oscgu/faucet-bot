@@ -11,15 +11,12 @@ const createTxEmbed = (
     color: RGBTuple
 ) =>
     new EmbedBuilder()
-        .setThumbnail(
-            "https://avatars.githubusercontent.com/u/95990630?s=200&v=4"
-        )
         .setColor(color)
-        .setTitle(`Testnet fund request 🚴`)
+        .setTitle(`Testnet fund request 🫡`)
         .addFields(
             { name: `⛓️ ${capitalize(chain)}`, value: `\u200b`, inline: true },
             {
-                name: `🪙 ${amount} ${capitalize(token)}`,
+                name: `🪙 \`${amount}\` ${capitalize(token)}`,
                 value: `\u200b`,
                 inline: true
             },

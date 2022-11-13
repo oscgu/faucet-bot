@@ -4,11 +4,15 @@ import { upsertLastRequestDate } from "../db/operations";
 import dotenv from "dotenv";
 import createTxEmbed from "../embeds/txEmbed";
 import createCdEmbed from "../embeds/cdEmbed";
-import { getAddressOfUser } from "../api/getAddressOfUser";
+import { getAddressOfUser } from "../backend/getAddressOfUser";
 import { sendFunds } from "../ether/sendFunds";
 import { validPair } from "../util/validPair";
 import { milliSecondsTillNextRequest } from "../util/milliSecondsTillNextRequest";
 import { faucets, Token } from "../config";
+import { hasEnoughBalance } from "../util/hasEnougBalance";
+import { oofEmbed } from "../embeds/oofEmbed";
+import { errEmbed } from "../embeds/errEmbed";
+import { utEmbed } from "../embeds/utEmbed";
 dotenv.config();
 
 export default {
@@ -43,14 +47,17 @@ export default {
         const token = interaction.options.getString("token") as string;
 
         if (!validPair(chain, token)) {
-            await interaction.reply(
-                `We don't supply ${token} on ${chain} at the moment! :(`
-            );
+            await interaction.reply({ embeds: [utEmbed(chain, token)] });
             return;
         }
 
-        const address = await getAddressOfUser(interaction.user.id);
         const faucetToken: Token = faucets[chain].tokens[token];
+
+        if (!(await hasEnoughBalance(chain, token, faucetToken.amount))) {
+            await interaction.reply({ embeds: [oofEmbed(chain, token)] });
+            return;
+        }
+
         const column = chain + "_" + token;
         const nextRequest = await milliSecondsTillNextRequest(
             column,
@@ -65,9 +72,10 @@ export default {
                 DateTime.utc().toMillis()
             );
 
+            const address = await getAddressOfUser(interaction.user.id);
             const { tx, provider } = await sendFunds(address, chain, token);
             if (!tx || !tx.hash) {
-                await interaction.reply("An error occured :(");
+                await interaction.reply({ embeds: [errEmbed(chain, token)] });
                 return;
             }
 
