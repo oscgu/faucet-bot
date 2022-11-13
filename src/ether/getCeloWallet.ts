@@ -7,5 +7,6 @@ export const getCeloWallet = async () => {
         "https://alfajores-forno.celo-testnet.org"
     );
     await provider.ready;
+
     return new CeloWallet(process.env.PRIVATE_KEY!, provider);
 };

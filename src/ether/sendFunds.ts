@@ -2,7 +2,6 @@ import { Transaction, ethers } from "ethers";
 import { parseEther } from "ethers/lib/utils";
 import { erc20 } from "../abis/erc20";
 import { faucets, Token } from "../config";
-import { getCeloWallet } from "./getCeloWallet";
 import { getWallet } from "./getWallet";
 
 export const sendFunds = async (
@@ -15,19 +14,9 @@ export const sendFunds = async (
 }> => {
     const token: Token = faucets[chain].tokens[tokenName];
     const value = parseEther(token.amount);
+    const wallet = await getWallet(chain);
 
     try {
-        if (chain == "alfajores") {
-            const wallet = await getCeloWallet();
-            const tx = await wallet.sendTransaction({
-                to: address,
-                value
-            });
-
-            return { tx, provider: wallet.provider };
-        }
-
-        const wallet = getWallet(chain);
         if (token.chainNative) {
             const tx = await wallet.sendTransaction({
                 to: address,
@@ -42,6 +31,7 @@ export const sendFunds = async (
             erc20,
             wallet
         );
+
         const tx = await erc20Contract.transfer(address, value);
 
         return { tx, provider: wallet.provider };
