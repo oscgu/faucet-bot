@@ -1,9 +1,9 @@
 # faucet-bot
 
 A small bot which you can use for your discord to send out testnet funds.  
-You can set a time restriction for each token.  
+You can set a time restriction for each token in `src/config.ts`.  
 
-Currently only chain native and erc20 tokens are supported.  
+Currently only **chain native** and **erc20** tokens are supported.  
 
 ## Getting started
 
@@ -45,12 +45,24 @@ The bot currently drops and creates tables again after every restart (can be dis
 
 Pending Transaction:
 
-![followup](https://user-images.githubusercontent.com/94227101/200392158-10be9a55-8de3-4fbd-92e3-d5d314229a08.png)
+![loading](https://user-images.githubusercontent.com/94227101/201547166-84810978-3750-4835-8610-189155a5cb91.png)
 
 Finished Transaction:
 
-![followup2](https://user-images.githubusercontent.com/94227101/200392207-081b1ae7-d6eb-420b-a705-92772aa29dc3.png)
+![finished](https://user-images.githubusercontent.com/94227101/201547171-423fa0cd-5d8e-42e2-a0d1-4faa0a3a8e14.png)
 
 Cooldown:
 
-![cdEmbed](https://user-images.githubusercontent.com/94227101/200073867-2b002175-c1e4-41e2-bc8b-fbba02867314.png)
+![cd](https://user-images.githubusercontent.com/94227101/201547212-1497756e-cd25-4bdd-bce8-5c95fcb2552d.png)
+
+Out of funds:
+
+![oof](https://user-images.githubusercontent.com/94227101/201547217-28f03424-4960-496c-b477-cc9cf17bdd3c.png)
+
+Unsupported Token:
+
+![ut](https://user-images.githubusercontent.com/94227101/201547219-01c479d2-7708-4ce7-b284-a455e5400012.png)
+
+Error:
+
+![err](https://user-images.githubusercontent.com/94227101/201547225-2511e90a-c432-4b3b-b6bb-49597b47b698.png)
