@@ -1,5 +1,10 @@
 # faucet-bot
 
+A small bot which you can use for your discord to send out testnet funds.  
+You can set a time restriction for each token.  
+
+Currently only chain native and erc20 tokens are supported.  
+
 ## Getting started
 
 run `yarn` to build
@@ -20,15 +25,11 @@ ADDRESS=
 ```
 
 The receiver address is currently hardcoded, but you can plug this into your existing backend by editing  
-`api/getAddresssOfUser.ts`. It passes the discord user id to it.
+`backend/getAddresssOfUser.ts`. It passes the discord user id to it.
 
 Register the slash commands with: `yarn ts-node registerCommands.ts`
 
 ## Running the bot
-
-Without docker and db:
-
-`yarn ts-node index.ts`
 
 With configured-db (requires docker(-compose) and `.env` file):
 
