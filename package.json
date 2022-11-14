@@ -4,7 +4,7 @@
   "description": "Discord bot do disburse testnet ether",
   "main": "index.js",
   "author": "Oscar Guertler <oscarguertler@gmail.com>",
-  "license": "MIT",
+  "license": "GPLV2",
   "private": true,
   "scripts": {
     "format": "prettier --write ."
